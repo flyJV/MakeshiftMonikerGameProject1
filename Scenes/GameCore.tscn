@@ -13,6 +13,7 @@
 [node name="Player" type="KinematicBody2D" parent="World"]
 position = Vector2( 160, 160 )
 script = ExtResource( 2 )
+move_V_on = false
 
 [node name="Ego" type="Sprite" parent="World/Player"]
 scale = Vector2( 0.3, 0.65 )

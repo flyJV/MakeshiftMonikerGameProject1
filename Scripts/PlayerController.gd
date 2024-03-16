@@ -3,32 +3,25 @@ extends KinematicBody2D
 # Declare member variables here.
 export var move_H_on = true
 export var move_V_on = true
-export var gravity_active = true 
+export var gravity_active = true
 export var speed = 64
-export var fall_sofen = 98
+export var fall_rate = 2
+var quiet
+var gameCore
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# We will need this later.
+	gameCore = get_node("/root/GameCore")
+	if (gameCore != null):
+		gameCore.coolThing()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every physics frame.
 func _physics_process(_delta):
 	# Function variables
 	var move = Vector2(0, 0)
 	var fall = 0
 	
-	# Gravity - just fall.
-	if (gravity_active):
-		if ((fall <= 0) && !is_on_floor()):
-			fall = 1
-		# Clear.
-		move.x = 0
-		# Calculate
-		fall += (fall * fall_sofen)
-		move.y = fall
-		# Drop.
-		move_and_slide(move)
 	# Clear.
 	move.y = 0
 	move.x = 0
@@ -44,6 +37,14 @@ func _physics_process(_delta):
 			move.y += -1
 		if (Input.is_action_pressed("action_down")):
 			move.y += 1
+	# Gravity - just fall.
+	if (gravity_active && !is_on_floor()):
+		# A naive attempt at velocity.
+		fall += fall_rate + fall
+		# Calculate
+		move.y += fall
+	else:
+		fall = 0
 	# Just move.
-	move_and_slide((move*speed))
+	quiet = move_and_slide((move*speed))
 	pass

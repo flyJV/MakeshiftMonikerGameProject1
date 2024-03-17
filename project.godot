@@ -65,6 +65,13 @@ action_3={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="CollideThis"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Static Interacts"
+2d_physics/layer_4="Entities"
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -72,6 +79,12 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=3
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/shading/force_vertex_shading=true
+quality/shading/force_lambert_over_burley=true
+quality/shading/force_blinn_over_ggx=true
 environment/default_environment="res://default_env.tres"

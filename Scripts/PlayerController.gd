@@ -4,6 +4,7 @@ extends KinematicBody2D
 export var move_H_on = true
 export var move_V_on = true
 export var gravity_active = true
+export var pickup_on = true
 export var speed = 64
 export var fall_rate = 2
 var quiet
@@ -21,6 +22,11 @@ func _physics_process(_delta):
 	# Function variables
 	var move = Vector2(0, 0)
 	var fall = 0
+	
+	# Handle pickups
+	if (pickup_on):
+		if (Input.is_action_just_pressed("action_3")):
+			pass
 	
 	# Clear.
 	move.y = 0
@@ -47,4 +53,3 @@ func _physics_process(_delta):
 		fall = 0
 	# Just move.
 	quiet = move_and_slide((move*speed))
-	pass

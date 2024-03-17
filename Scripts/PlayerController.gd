@@ -22,12 +22,6 @@ func _physics_process(_delta):
 	# Function variables
 	var move = Vector2(0, 0)
 	var fall = 0
-	
-	# Handle pickups
-	if (pickup_on):
-		if (Input.is_action_just_pressed("action_3")):
-			pass
-	
 	# Clear.
 	move.y = 0
 	move.x = 0

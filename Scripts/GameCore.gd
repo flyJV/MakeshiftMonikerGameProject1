@@ -12,4 +12,4 @@ func _input(_event):
 
 # Just a test thing at the moment.
 func coolThing():
-	print_debug("Found me!")
+	print("Found me!")

@@ -39,7 +39,7 @@ func _physics_process(_delta):
 			move.y += gravity
 			if onFloor or hitHead:
 				move.y = 2
-			if Input.is_action_just_pressed("action_1"):
+			if Input.is_action_just_pressed("action_1") and onFloor:
 				move.y -= jump
 		else:
 			move.y = 0

@@ -7,9 +7,9 @@ export var keys = 0
 
 # OK, so it just quits right now
 func _input(_event):
-	if (Input.is_action_just_released("ui_cancel")):
+	if Input.is_action_just_released("ui_cancel"):
 		get_tree().quit(0)
 
 # Just a test thing at the moment.
 func coolThing():
-	print("Found me!")
+	print("Found gameCore's coolThing!")

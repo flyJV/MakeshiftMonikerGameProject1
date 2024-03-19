@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 # Declare member variables here.
+onready var gameCore = get_node("/root/GameCore")
 export var movementOn = true
 export var sideScrollMovement = true
 export var pickup_on = true
@@ -10,14 +11,16 @@ export var jump = 256
 export var gravity = 8
 var move = Vector2(0, 0)
 var platUp = Vector2(0, -1)
-var gameCore
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# We will need this later.
-	gameCore = get_node("/root/GameCore")
 	if gameCore:
 		gameCore.coolThing()
+
+# Called every input poll.
+func _input(_event):
+	pass
 
 # Called every physics frame.
 func _physics_process(_delta):
@@ -39,7 +42,7 @@ func _physics_process(_delta):
 			move.y += gravity
 			if onFloor or hitHead:
 				move.y = 2
-			if Input.is_action_just_pressed("action_1") and onFloor:
+			if Input.is_action_pressed("action_1") and onFloor:
 				move.y -= jump
 		else:
 			move.y = 0

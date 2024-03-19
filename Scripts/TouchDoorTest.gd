@@ -17,7 +17,7 @@ func _physics_process(_delta):
 # Area2D scans.
 func _on_Area2D_area_entered(_area):
 	# Unlock immediately if we got a key.
-	if gameCore.keys:
+	if gameCore.keys and locked:
 		gameCore.keys -= 1
 		locked = false
 		print("Open Sesame!")

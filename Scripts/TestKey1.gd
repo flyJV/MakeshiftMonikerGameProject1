@@ -12,8 +12,7 @@ func yeet():
 func _input(_event):
 	# Pick key up if key pressed.
 	if canGet and Input.is_action_just_pressed("action_3"):
-		$KeyCollide/CollisionShape2D.set_deferred("disabled", true)
-		$Sprite.visible = false
+		yeet()
 		canGet = false
 		gameCore.keys += 1
 		print("Got key!")

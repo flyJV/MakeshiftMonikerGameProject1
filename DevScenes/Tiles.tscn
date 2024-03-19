@@ -71,8 +71,8 @@ texture = ExtResource( 6 )
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomRight"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRight/StaticBody2D"]
-position = Vector2( -16, 0 )
-shape = SubResource( 3 )
+position = Vector2( -16, -16 )
+shape = SubResource( 4 )
 
 [node name="UpperLeft" type="Sprite" parent="."]
 texture = ExtResource( 7 )
@@ -80,8 +80,8 @@ texture = ExtResource( 7 )
 [node name="StaticBody2D" type="StaticBody2D" parent="UpperLeft"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperLeft/StaticBody2D"]
-position = Vector2( 0, 16 )
-shape = SubResource( 1 )
+position = Vector2( 16, 16 )
+shape = SubResource( 4 )
 
 [node name="UpperRight" type="Sprite" parent="."]
 texture = ExtResource( 8 )

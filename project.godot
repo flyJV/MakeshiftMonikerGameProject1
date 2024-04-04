@@ -81,6 +81,8 @@ action_3={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Static Interacts"
 2d_physics/layer_4="Entities"
+2d_physics/layer_5="CollideThisIso"
+2d_physics/layer_7="StaticIso"
 
 [physics]
 

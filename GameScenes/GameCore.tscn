@@ -9,12 +9,13 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -72.0 ]
 }
 keys = 2
-levels = [ "res://LevelScenes/Home.tscn", "res://LevelScenes/SideTestWorld.tscn" ]
+levels = [ "res://LevelScenes/Home.tscn", "res://LevelScenes/IsoLevelTest.tscn" ]
 startPos = [ Vector2( 160, 90 ), Vector2( 160, 90 ) ]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160, 90 )
 z_index = 1
+sideScrollMovement = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, -32 )
